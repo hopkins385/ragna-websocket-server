@@ -6,13 +6,13 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik_net"
       # Websocket
-      - "traefik.http.routers.ws-webapp.rule=Host(`socket.ragna-ai.com`) && PathPrefix(`/socket.io`)"
-      - "traefik.http.routers.ws-webapp.entrypoints=https"
-      - "traefik.http.routers.ws-webapp.service=ws-webapp"
-      - "traefik.http.services.ws-webapp.loadbalancer.server.port=3030"
-      - "traefik.http.routers.ws-webapp.middlewares=crowdsec-bouncer@file,websocket@file"
-      - "traefik.http.routers.ws-webapp.tls=true"
-      - "traefik.http.routers.ws-webapp.tls.certresolver=http"
+      - "traefik.http.services.socket.loadbalancer.server.port=3030"
+      - "traefik.http.routers.socket.rule=Host(`socket.ragna-ai.com`) && PathPrefix(`/socket.io`)"
+      - "traefik.http.routers.socket.entrypoints=https"
+      - "traefik.http.routers.socket.service=socket"
+      - "traefik.http.routers.socket.middlewares=crowdsec-bouncer@file,default@file,websocket@file"
+      - "traefik.http.routers.socket.tls=true"
+      - "traefik.http.routers.socket.tls.certresolver=http"
     networks:
       traefik_net:
 
