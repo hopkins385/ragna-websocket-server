@@ -1,0 +1,11 @@
+name: ragna-websocket
+
+services:
+  app:
+    image: ragna/websocket
+    restart: unless-stopped
+    working_dir: /app
+    env_file:
+      - .env
+    security_opt:
+      - no-new-privileges:true

@@ -1,0 +1,4 @@
+services:
+  app:
+    ports:
+      - 3030:3030

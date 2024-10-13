@@ -1,0 +1,25 @@
+services:
+  app:
+    deploy:
+      replicas: 1
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_net"
+      # Websocket
+      - "traefik.http.routers.ws-webapp.rule=Host(`socket.ragna-ai.com`) && PathPrefix(`/socket.io`)"
+      - "traefik.http.routers.ws-webapp.service=ws-webapp"
+      - "traefik.http.services.ws-webapp.loadbalancer.server.port=3030"
+      - "traefik.http.routers.ws-webapp.middlewares=crowdsec-bouncer@file,websocket@file"
+      - "traefik.http.routers.ws-webapp.tls=true"
+    networks:
+      traefik_net:
+
+  postgres:
+    networks:
+      - wgnet
+
+networks:
+  traefik_net:
+    external: true
+  wgnet:
+    external: true
