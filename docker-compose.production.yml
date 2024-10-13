@@ -14,10 +14,6 @@ services:
     networks:
       traefik_net:
 
-  postgres:
-    networks:
-      - wgnet
-
 networks:
   traefik_net:
     external: true
