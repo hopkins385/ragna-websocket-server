@@ -16,7 +16,7 @@ export function emitController(
     }
     const { room, event, args } = req.body;
     io.to(room).emit(event, args);
-    // console.log(`emitted ${event} to room ${room}`);
+    console.log(`emitted ${event} to room ${room}`);
     res.json({ status: "ok" });
   }
 }
