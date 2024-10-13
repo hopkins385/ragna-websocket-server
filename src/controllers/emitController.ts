@@ -14,8 +14,8 @@ export function emitController(
       res.status(403).json({ error: "invalid appId" });
       return;
     }
-    const { room, event, args } = req.body;
-    io.to(room).emit(event, args);
+    const { room, event, data } = req.body;
+    io.to(room).emit(event, data);
     console.log(`emitted ${event} to room ${room}`);
     res.json({ status: "ok" });
   }
