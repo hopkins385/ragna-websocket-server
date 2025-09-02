@@ -1,15 +1,21 @@
 {
   "name": "ragna-websocket-server",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "out/index.js",
   "scripts": {
     "build": "npx tsc",
     "dev": "nodemon src/index.ts"
   },
-  "keywords": [],
+  "keywords": [
+    "websocket",
+    "socket.io",
+    "real-time",
+    "typescript",
+    "express"
+  ],
   "author": "Sven Stadhouders",
-  "license": "other",
-  "description": "",
+  "license": "MIT",
+  "description": "A WebSocket server with JWT authentication and room-based messaging using Socket.IO",
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.7",
