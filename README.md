@@ -1,4 +1,4 @@
-# Ragna WebSocket Server
+# RAGNA Studio - WebSocket Server
 
 A TypeScript WebSocket server built with Socket.IO and Express, featuring JWT authentication and room-based messaging.
 
