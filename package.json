@@ -14,7 +14,7 @@
     "express"
   ],
   "author": "Sven Stadhouders",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "description": "A WebSocket server with JWT authentication and room-based messaging using Socket.IO",
   "devDependencies": {
     "@types/express": "^5.0.0",
